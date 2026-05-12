@@ -95,11 +95,20 @@ client.on('message', async (message) => {
     return;
   }
 
-  // Saudação simples ou primeira mensagem: mostra menu.
+  // Saudação simples: mostra menu.
   const saudacoes = ['oi', 'olá', 'ola', 'bom dia', 'boa tarde', 'boa noite'];
   const pareceSaudacao = saudacoes.some((s) => text.includes(s));
 
   if (pareceSaudacao) {
+    await message.reply(messages.MENU_PRINCIPAL);
+    return;
+  }
+
+  // Se não for saudação nem número, ainda mostramos o menu.
+  // Isso ajuda quando a pessoa manda uma primeira mensagem livre,
+  // algo comum em atendimento de igreja.
+  const ehNumeroMenu = ['1', '2', '3', '4', '5', '6'].includes(text);
+  if (!ehNumeroMenu) {
     await message.reply(messages.MENU_PRINCIPAL);
     return;
   }
