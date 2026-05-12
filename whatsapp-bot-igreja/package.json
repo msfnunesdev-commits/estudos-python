@@ -1,0 +1,21 @@
+{
+  "name": "bot-whatsapp-igreja",
+  "version": "1.0.0",
+  "description": "Bot simples de atendimento para igreja usando menu numérico no WhatsApp",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "igreja",
+    "atendimento"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.34.1"
+  }
+}
